@@ -1,0 +1,25 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - googleCalendarId
+      - googleTimeZone
+      - googleCredentialsPath
+    properties:
+      googleCalendarId:
+        type: string
+        description: The Google Calendar ID to interact with.
+      googleTimeZone:
+        type: string
+        description: The time zone setting for the calendar operations.
+      googleCredentialsPath:
+        type: string
+        description: Path to the JSON credentials file for Google Cloud services.
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['dist/index.cjs'], env: { GOOGLE_CALENDAR_ID: config.googleCalendarId, GOOGLE_TIME_ZONE: config.googleTimeZone, GOOGLE_CREDENTIALS_PATH: config.googleCredentialsPath } })
