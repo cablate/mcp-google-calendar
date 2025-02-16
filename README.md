@@ -1,5 +1,7 @@
 # Calendar Tools MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@cablate/mcp-google-calendar)](https://smithery.ai/server/@cablate/mcp-google-calendar)
+
 A powerful Model Context Protocol (MCP) server providing comprehensive calendar management capabilities.
 
 ## Features
@@ -16,6 +18,15 @@ A powerful Model Context Protocol (MCP) server providing comprehensive calendar 
 ![Calendar Tools Demo](docs/Demo-on-Dive-Desktop.png)
 
 ## Installation
+
+### Installing via Smithery
+
+To install Calendar Tools for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@cablate/mcp-google-calendar):
+
+```bash
+npx -y @smithery/cli install @cablate/mcp-google-calendar --client claude
+```
+
 
 ### Manual Installation
 
